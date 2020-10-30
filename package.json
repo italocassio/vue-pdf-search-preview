@@ -1,6 +1,6 @@
 {
   "name": "vue-pdf-search-keyword",
-  "version": "0.1.1",
+  "version": "0.1.3",
   "private": false,
   "description": "Search keywords in PDF. Project base on Vue.js and Pdf.js. This project has new customizations based in https://github.com/Youhandan/vue-pdf-search-preview",
   "scripts": {

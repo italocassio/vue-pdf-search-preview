@@ -1,5 +1,6 @@
 # vue-pdf-search-keyword
 
+Version 0.1.3
 Search keywords in PDF. Project base on Vue.js and Pdf.js. This project has new customizations based in https://github.com/Youhandan/vue-pdf-search-preview
 
 ## Step1 Install
