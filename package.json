@@ -1,8 +1,8 @@
 {
-  "name": "vue-pdf-search-viewer",
-  "version": "0.2.2",
+  "name": "vue-pdf-search-keyword",
+  "version": "0.1.1",
   "private": false,
-  "description": "Pdf viewer base on Vue.js and Pdf.js, support pdf view, search by keyword and change page",
+  "description": "Search keywords in PDF. Project base on Vue.js and Pdf.js. This project has new customizations based in https://github.com/Youhandan/vue-pdf-search-preview",
   "scripts": {
     "lib": "vue-cli-service build --target lib --name vue-pdf-search-viewer --dest lib packages/index.js"
   },
@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.4.0",
-    "@vue/cli-service": "4.4.0",
+    "@vue/cli-service": "^4.4.0",
     "node-sass": "4.12.0",
     "sass-loader": "8.0.2",
     "vue-template-compiler": "2.6.11",
@@ -24,17 +24,17 @@
     "pdf",
     "search"
   ],
-  "homepage": "https://github.com/Youhandan/vue-pdf-search-preview/tree/lib-release#step1-install",
+  "homepage": "https://github.com/italocassio/vue-pdf-search-preview",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Youhandan/vue-pdf-search-preview.git"
+    "url": "https://github.com/italocassio/vue-pdf-search-preview.git"
   },
-  "author": "Youhandan",
+  "author": "Italo",
   "contributors": [
     {
-      "name": "sumriser",
-      "email": "sumriser@163.com",
-      "url": "https://github.com/sumriser"
+      "name": "italo",
+      "email": "italocassio95@gmail.com",
+      "url": "https://github.com/italocassio"
     }
   ]
 }

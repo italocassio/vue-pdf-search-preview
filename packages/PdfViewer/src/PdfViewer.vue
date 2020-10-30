@@ -34,14 +34,7 @@ export default {
     this.initViewer()
   },
   beforeDestroy() {
-    this.pdfViewer.eventBus.off('updatefindmatchescount', this.handleMatchResult)
-    this.pdfViewer.eventBus.off('updatefindcontrolstate', this.handleSearchStateChange)
-    this.pdfViewer.eventBus.off('pagechanging', this.handlePageChange)
-    this.pdfViewer.eventBus.off('pagesinit', this.handleLoadPDF)
-
-    this.pdfLoadingTask.destroy()
-    this.pdfViewer = null
-    this.pdfLoadingTask = null
+    this.destroyPdf()
   },
   methods: {
     initViewer() {
@@ -69,6 +62,16 @@ export default {
         linkService.setDocument(pdfDoc)
         this.$emit('on-loaded', pdfDoc.numPages)
       })
+    },
+    destroyPdf(){
+      this.pdfViewer.eventBus.off('updatefindmatchescount', this.handleMatchResult)
+      this.pdfViewer.eventBus.off('updatefindcontrolstate', this.handleSearchStateChange)
+      this.pdfViewer.eventBus.off('pagechanging', this.handlePageChange)
+      this.pdfViewer.eventBus.off('pagesinit', this.handleLoadPDF)
+
+      this.pdfLoadingTask.destroy()
+      this.pdfViewer = null
+      this.pdfLoadingTask = null
     },
     handleMatchResult(e) {
       let matchesCount = { ...e.matchesCount }
@@ -115,7 +118,7 @@ export default {
       if (isMatchChinese) newKeyword = this.matchChinese(keyword)
       this.realKeyword = newKeyword
       this.pdfViewer.findController.executeCommand('find', {
-        caseSensitive: true,
+        caseSensitive: false,
         phraseSearch: true,
         query: newKeyword,
         findPrevious: false,
@@ -125,7 +128,7 @@ export default {
     },
     searchAgain(prev) {
       this.pdfViewer.findController.executeCommand('findagain', {
-        caseSensitive: true,
+        caseSensitive: false,
         phraseSearch: true,
         query: this.realKeyword,
         findPrevious: prev,

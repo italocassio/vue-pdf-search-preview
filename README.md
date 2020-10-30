@@ -1,10 +1,10 @@
-# vue-pdf-search-preview
+# vue-pdf-search-keyword
 
-Pdf viewer base on Vue.js and Pdf.js, support pdf view, search by keyword and change page.
+Search keywords in PDF. Project base on Vue.js and Pdf.js. This project has new customizations based in https://github.com/Youhandan/vue-pdf-search-preview
 
 ## Step1 Install
 ```
-npm install --save vue-pdf-search-preivew
+npm install --save vue-pdf-search-keyword
 ```
 
 ## Step2 Config webpack or vue.config(below is vue.config)
@@ -21,13 +21,13 @@ module.exports = {
       .tap(args => {
         args[0].push(
           {
-            context: 'node_modules/vue-pdf-search-viewer/lib/',
+            context: 'node_modules/vue-pdf-search-keyword/lib/',
             from: '*.umd.min.*.js',
             to: 'js/',
             toType: 'dir'
           },
           {
-            from: 'node_modules/vue-pdf-search-viewer/lib/pdf.worker.js',
+            from: 'node_modules/vue-pdf-search-keyword/lib/pdf.worker.js',
             to: 'pdf.worker.js',
             toType: 'file'
           },
@@ -41,7 +41,7 @@ module.exports = {
 ```
 //main.js
 
-import PdfViewer from 'vue-pdf-search-viewer'
+import PdfViewer from 'vue-pdf-search-keyword'
 
 Vue.use(PdfViewer)
 ```
